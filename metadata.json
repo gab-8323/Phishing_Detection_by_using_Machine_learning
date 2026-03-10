@@ -1,0 +1,7 @@
+{
+  "name": "Phishing Detection AI - Advanced Security Suite",
+  "description": "A comprehensive cybersecurity suite for detecting phishing attempts in URLs, emails, and screenshots using Gemini 3.0 AI and real-time grounding.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
