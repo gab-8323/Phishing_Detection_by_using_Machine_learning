@@ -8,7 +8,7 @@ A comprehensive cybersecurity platform designed to identify, analyze, and neutra
 
 The Phishing Detection suite is a sophisticated cybersecurity platform that moves beyond traditional "blacklist" methods to understand the underlying patterns and behaviors of modern cyberattacks. By leveraging Machine Learning (ML), it provides intelligent, adaptive protection against evolving phishing threats.
 
----
+--- 
 
 ## Core Features
 
