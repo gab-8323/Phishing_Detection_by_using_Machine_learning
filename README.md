@@ -56,25 +56,9 @@ This project is powered by Machine Learning at its core. Unlike standard softwar
 - **Data Visualization** — Integrated analytics tools to transform complex ML output into easy-to-understand risk metrics.
 - **Scalability** — Designed to handle various inputs — from simple text strings to high-resolution images — ensuring comprehensive coverage across different digital platforms.
 
----
 
-## Run Locally
 
-**Prerequisites:** Node.js
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Create a `.env` file in the project root and add your Gemini API key:
-   ```
-   GEMINI_API_KEY=your_api_key_here
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-4. Open your browser and navigate to `http://localhost:3000`
 
 ---
 
