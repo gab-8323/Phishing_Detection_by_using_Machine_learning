@@ -152,7 +152,7 @@ const App: React.FC = () => {
           </div>
         )}
 
-        <section ref={heroRef} className="w-full max-w-7xl min-h-[55vh] md:min-h-[65vh] flex flex-col items-center justify-center px-4 md:px-8 text-center mx-auto overflow-hidden">
+        <section ref={heroRef} className="w-full max-w-7xl min-h-[55vh] md:min-h-[65vh] flex flex-col items-center justify-center px-4 md:px-8 text-center mx-auto">
           <div className="mb-3 md:mb-7 relative">
              <div className="absolute inset-0 blur-3xl bg-brand/30 rounded-full scale-150 animate-pulse"></div>
              <span className={"relative font-mono text-[9px] md:text-[13px] tracking-[0.6em] md:tracking-[1em] uppercase font-black transition-colors " + (isDanger ? 'text-red-500' : 'text-brand')}>

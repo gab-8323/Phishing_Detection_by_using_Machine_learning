@@ -166,7 +166,7 @@ const ScannerUI: React.FC<ScannerUIProps> = ({ onResult, onStart }) => {
           </div>
 
           {showModelSelect && (
-            <div className="absolute top-full left-0 right-0 mt-2 z-[50] glass-card border border-brand/40 rounded-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+            <div className="absolute top-full left-0 right-0 mt-2 z-[500] glass-card border border-brand/40 rounded-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
               {ML_MODELS.map((model) => (
                 <div 
                   key={model}
