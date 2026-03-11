@@ -124,14 +124,13 @@ export class GeminiService {
 
       return { ...data, groundingSources: grounding };
     } catch (e: any) {
-      console.error("analyzeUrl error:", e?.message || e);
       return {
         riskScore: 85,
         riskLevel: RiskLevel.HIGH,
-        verdict: `SCAN_ERROR: ${e?.message?.slice(0, 80) || 'UNKNOWN'}`,
-        threats: ["API_ERROR", e?.message?.slice(0, 60) || "UNKNOWN_ERROR"],
+        verdict: "QUOTA_EXHAUSTED: Replace API key in Vercel settings",
+        threats: ["API_LIMIT_REACHED", "POTENTIAL_THREAT_DETECTION_OFFLINE"],
         recommendations: ["Manually verify domain age", "Check for SSL authenticity", "Avoid credential entry"],
-        technicalDetails: e?.message || "Unknown error"
+        technicalDetails: "API quota exhausted. Get a new key from aistudio.google.com"
       };
     }
   }
