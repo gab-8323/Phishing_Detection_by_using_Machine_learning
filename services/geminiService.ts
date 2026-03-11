@@ -124,13 +124,14 @@ export class GeminiService {
 
       return { ...data, groundingSources: grounding };
     } catch (e: any) {
+      console.error("analyzeUrl error:", e?.message || e);
       return {
         riskScore: 85,
         riskLevel: RiskLevel.HIGH,
-        verdict: "LINK_ANALYSIS_INTERRUPTED: QUOTA_EXHAUSTED",
-        threats: ["API_LIMIT_REACHED", "POTENTIAL_THREAT_DETECTION_OFFLINE"],
+        verdict: `SCAN_ERROR: ${e?.message?.slice(0, 80) || 'UNKNOWN'}`,
+        threats: ["API_ERROR", e?.message?.slice(0, 60) || "UNKNOWN_ERROR"],
         recommendations: ["Manually verify domain age", "Check for SSL authenticity", "Avoid credential entry"],
-        technicalDetails: "Analysis was cut short due to API rate limits. Assume high risk until manual verification."
+        technicalDetails: e?.message || "Unknown error"
       };
     }
   }
