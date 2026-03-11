@@ -34,7 +34,7 @@ export class GeminiService {
   async chatWithAssistant(history: {role: string, parts: {text: string}[]}[], message: string): Promise<string> {
     try {
       const response = await this.ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash",
         contents: [...history, { role: 'user', parts: [{ text: message }] }],
         config: {
           systemInstruction: "You are the Phishing Detection Neural Assistant. Help users understand phishing, how to protect themselves, and technical cybersecurity concepts. Keep responses professional, tactical, and concise.",
@@ -92,8 +92,8 @@ export class GeminiService {
   async analyzeUrl(url: string, modelName: string = 'RANDOM_FOREST'): Promise<ScanResult> {
     try {
       const response = await this.ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: `Perform a deep security audit on this URL: ${url}. 
+        model: "gemini-2.0-flash",
+        contents: `Perform a deep security audit on this URL
         Simulate the analysis as if using the ${modelName} classifier. 
         If it's Random Forest, mention ensemble voting. If SVM, mention hyperplane margins. 
         Is it a phishing site? Provide technical reasoning.`,
@@ -138,8 +138,8 @@ export class GeminiService {
   async analyzeText(text: string, modelName: string = 'RANDOM_FOREST'): Promise<ScanResult> {
     try {
       const response = await this.ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: `Analyze this message for social engineering and phishing indicators: ${text}. 
+        model: "gemini-2.0-flash",
+        contents: `Analyze this message for social engineering
         Simulate the analysis using the ${modelName} classifier logic.`,
         config: {
           systemInstruction: GeminiService.SYSTEM_PROMPT,
@@ -172,7 +172,7 @@ export class GeminiService {
   async analyzeImage(base64Data: string, mimeType: string = 'image/png', modelName: string = 'RANDOM_FOREST'): Promise<ScanResult> {
     try {
       const response = await this.ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash",
         contents: {
           parts: [
             { inlineData: { data: base64Data, mimeType: mimeType } },
